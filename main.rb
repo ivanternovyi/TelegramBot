@@ -29,6 +29,11 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
       chat_id: message.chat.id,
       text: "Hi, #{message.from.first_name}!"
       )
+    when 'Hi', 'Hello'
+      bot.api.send_message(
+      chat_id: message.chat.id,
+      text: "Hi, you`re so polite)"
+      )
     else
       bot.api.send_message(
       chat_id: message.chat.id,
